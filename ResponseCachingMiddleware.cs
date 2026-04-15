@@ -28,7 +28,7 @@ namespace Skyb.Extensions.Caching.MemCached
             string cacheKey = ComputeCacheKey(context.Request.Path);
 
             // Check if the response is cached
-            byte[] cachedResponse = await _cache.GetAsync(cacheKey);
+            byte[]? cachedResponse = await _cache.GetAsync(cacheKey);
             if (cachedResponse != null)
             {
                 await WriteCachedResponseAsync(context.Response, cachedResponse);

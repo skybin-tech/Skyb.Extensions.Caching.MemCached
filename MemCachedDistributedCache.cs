@@ -16,7 +16,7 @@ namespace Skyb.Extensions.Caching.MemCached
             _client = client;
         }
 
-        public byte[] Get(string key)
+        public byte[]? Get(string key)
         {
             return RunSynchronously(GetAsync(key));
         }
